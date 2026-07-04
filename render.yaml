@@ -1,0 +1,34 @@
+# Render Blueprint — lets Render set most of this up automatically from
+# "New +" -> "Blueprint" once this repo is pushed to GitHub and connected.
+# Secrets (sync: false) aren't stored here; Render will prompt for them once
+# during setup instead. See the README's Deployment section for the full
+# walkthrough, including where each of these values comes from.
+services:
+  - type: web
+    name: loan-readiness-app
+    runtime: docker
+    plan: starter
+    dockerfilePath: ./Dockerfile
+    disk:
+      name: qbo-tokens
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: QBO_TOKEN_FILE
+        value: /data/.qbo-tokens.json
+      - key: QBO_ENVIRONMENT
+        value: production
+      - key: PUPPETEER_EXECUTABLE_PATH
+        value: /usr/bin/chromium
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: QBO_CLIENT_ID
+        sync: false
+      - key: QBO_CLIENT_SECRET
+        sync: false
+      - key: QBO_REDIRECT_URI
+        sync: false
+      - key: BASIC_AUTH_USER
+        sync: false
+      - key: BASIC_AUTH_PASS
+        sync: false
