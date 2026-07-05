@@ -707,7 +707,7 @@ Write 3 short paragraphs: (1) business overview and loan purpose, (2) financial 
 
         <div class="lr-docsection">
           <h4>Narrative Summary</h4>
-          <div style="font-family:'Spectral',serif; font-size:14.5px; line-height:1.7; white-space:pre-wrap;">${escapeHtml(state.narrative || "(no narrative generated)")}</div>
+          <div style="font-family:'Inter',sans-serif; font-size:14.5px; line-height:1.7; white-space:pre-wrap;">${escapeHtml(state.narrative || "(no narrative generated)")}</div>
         </div>
 
         <div class="lr-docsection">
